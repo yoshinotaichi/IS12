@@ -1,6 +1,6 @@
-// ƒT[ƒo‚ÉƒƒbƒZ[ƒW‚ğ‘—M‚µA•ÔM‚ğó‚¯æ‚Á‚Ä•W€o—Í‚Éo—Í‚·‚éB
-// ÀŒ±•û–@F java  Writenet   ƒT[ƒoƒAƒhƒŒƒX   ƒ|[ƒg”Ô†
-//					ªwebƒT[ƒo‚ÉƒAƒNƒZƒX‚µ‚ÄAƒf[ƒ^‚ğóM‚µ‚Ä‚İ‚æ‚¤I
+// ã‚µãƒ¼ãƒã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ä¿¡ã—ã€è¿”ä¿¡ã‚’å—ã‘å–ã£ã¦æ¨™æº–å‡ºåŠ›ã«å‡ºåŠ›ã™ã‚‹ã€‚
+// å®Ÿé¨“æ–¹æ³•ï¼š java  Writenet   ã‚µãƒ¼ãƒã‚¢ãƒ‰ãƒ¬ã‚¹   ãƒãƒ¼ãƒˆç•ªå·
+//		â†‘webã‚µãƒ¼ãƒã«ã‚¢ã‚¯ã‚»ã‚¹ã—ã¦ã€ãƒ‡ãƒ¼ã‚¿ã‚’å—ä¿¡ã—ã¦ã¿ã‚ˆã†ï¼
 // Writenet.java
 
 import java.io.*;
@@ -16,18 +16,17 @@ public class Writenet
 		OutputStream	outstr	=	null;
 		boolean	cont	=	true;
 
-		// ƒT[ƒo‚Ö‚ÌÚ‘±
+		// ã‚µãƒ¼ãƒã¸ã®æ¥ç¶š
 		try	{
-			int	portNum	=	Integer.parseInt(args[1]);					// ˆø”‚Í•¶š‚È‚Ì‚ÅAƒ|[ƒg”Ô†‚¾‚¯
-			sock	=	new Socket(args[0], portNum);							// ”’l‚É•ÏŠ·‚·‚éB
-			instr	=	sock.getInputStream();
+			// å¼•æ•°ã¯æ–‡å­—ãªã®ã§ã€ãƒãƒ¼ãƒˆç•ªå·ã ã‘æ•°å€¤ã«å¤‰æ›ã™ã‚‹ã€‚
+			int	portNum	=	Integer.parseInt(args[1]);						sock	=	new Socket(args[0], portNum);							instr	=	sock.getInputStream();
 			outstr	=	sock.getOutputStream();
 		}	catch	(Exception	e)	{
-			System.err.println("ƒlƒbƒgƒ[ƒNƒGƒ‰[");
+			System.err.println("ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã‚¨ãƒ©ãƒ¼");
 			System.exit(1);
 		}
 
-		// “ü—Í‚ğ‘—M‚·‚éB
+		// å…¥åŠ›ã‚’é€ä¿¡ã™ã‚‹ã€‚
 		while	(cont)
 		{
 			try	{
@@ -46,7 +45,7 @@ public class Writenet
 		}
 
 
-		// ƒT[ƒo‚©‚ç‚Ì•ÔM‚ğo—Í‚·‚éB
+		// ã‚µãƒ¼ãƒã‹ã‚‰ã®è¿”ä¿¡ã‚’å‡ºåŠ›ã™ã‚‹ã€‚
 		cont	=	true;
 		while	(cont)
 		{
@@ -59,13 +58,13 @@ public class Writenet
 		}
 
 
-		// Ú‘±‚ğ•Â‚¶‚éB
+		// æ¥ç¶šã‚’é–‰ã˜ã‚‹ã€‚
 		try	{
 			instr.close();
 		}	catch	(Exception	e){
-			System.err.println("ƒlƒbƒgƒ[ƒNƒGƒ‰[");
+			System.err.println("ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã‚¨ãƒ©ãƒ¼");
 			System.exit(1);
 		}
 
-	} // main()ƒƒ\ƒbƒh‚ÌI‚í‚èB
-} // WritenetƒNƒ‰ƒX‚ÌI‚í‚èB
+	} // main()ãƒ¡ã‚½ãƒƒãƒ‰ã®çµ‚ã‚ã‚Šã€‚
+} // Writenetã‚¯ãƒ©ã‚¹ã®çµ‚ã‚ã‚Šã€‚
