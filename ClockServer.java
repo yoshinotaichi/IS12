@@ -41,7 +41,8 @@ public	class	ClockServer
 + "I think it is possible to cure all diseases in our children's lifetime" 
 + "but we need to invest much more to get there. The US government currently spends 50x more treating people who are sick than finding cures so people do not get sick in the first place." 
 + "Today is an important step towards changing that, and I hope the Senate follows the House is lead."
-						+	"\n";
+						+ 	"\n";
+						+   "Mark Juk"
 
 				// データを出力する。
 				out	=	sock.getOutputStream();
