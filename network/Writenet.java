@@ -1,7 +1,4 @@
-// サーバにメッセージを送信し、返信を受け取って標準出力に出力する。
-// 実験方法： java  Writenet   サーバアドレス   ポート番号
-//					↑webサーバにアクセスして、データを受信してみよう！
-// Writenet.java
+
 
 import java.io.*;
 import java.net.*;

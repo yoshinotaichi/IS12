@@ -27,7 +27,7 @@ public	class	ClockServer
 				// 出力用データを生成する。
 				d	=	new	Date();
 				outstr	=	"\n"
-						+	"Hello, thisj is ClockServer by dilip."
+						+	"Hello, this is ClockServer by XXXXXXX."
 						+	"\n"	
 						+	d.toString()	+	"\n"
 						+	"Thank you."	+	"\n";
