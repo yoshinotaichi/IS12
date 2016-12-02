@@ -19,8 +19,9 @@ public class Readnet
 			readsock	=	new	Socket(args[0],	Integer.parseInt(args[1]));	
 			// ソケットobjから、入力データストリームを生成する。
 			instr	=	readsock.getInputStream();
-		}												catch	(Exception	e)	{
+		}	catch	(Exception	e)	{
 			System.err.println("ネットワークエラーです。");
+			System.out.println(e.getMessage()); 
 			System.exit(1);
 		}
 
@@ -33,7 +34,8 @@ public class Readnet
 				int	n	=	instr.read(buff);			
 
 				// buff の内容を標準出力に出力。
-				System.out.write(buff,	0,	n);							}																							// ※ファイルの処理と同じ！！
+				System.out.write(buff,	0,	n);
+			}																							// ※ファイルの処理と同じ！！
 			catch	(Exception	e)	{
 				cont	=	false;
 			}
