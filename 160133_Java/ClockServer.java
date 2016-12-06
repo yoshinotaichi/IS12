@@ -1,3 +1,37 @@
+<<<<<<< HEAD
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class ClockServer{
+	public static void main(String[] args){
+		ServerSocket servsock = null;
+		Socket sock;
+		OutputStream out;
+		String outstr;
+		int i;
+		Date d;
+
+		try {
+			servsock = new ServerSocket(6000,300);
+			while(true){
+				sock = servsock.accept();
+				d = new Date();
+				outstr = "\n" + "Hello,this is ClockServer by 160133." + "\n" + d.toString() + "\n" + "Thank you." + "\n";
+				out = sock.getOutputStream();
+				for(i=0; i<outstr.length(); i++){
+					out.write((int)outstr.charAt(i));
+				}
+				out.write('\n');
+				sock.close();
+			}
+		} 
+		catch(IOException e) {
+			System.exit(1);
+		}
+	}
+}
+=======
 import	java.io.*;
 import	java.net.*;
 import	java.util.*;
@@ -27,10 +61,12 @@ public	class	ClockServer
 				// 出力用データを生成する。
 				d	=	new	Date();
 				outstr	=	"\n"
-						+	"Hello, this is ClockServer by 艾文彬."
+						+	"Hello, this is ClockServer by 160136"
 						+	"\n"	
+						+	d.toString()	+	"\n"
+						+	"I am late today, I'm sorry"
 						+	"\n"
-						+	"\n";
+						+	"Thank you."	+	"\n";
 
 				// データを出力する。
 				out	=	sock.getOutputStream();
@@ -39,7 +75,7 @@ public	class	ClockServer
 					out.write((int)	outstr.charAt(i));
 				}
 				out.write('\n');
-
+				System.out.println();
 				// ストリームを閉じる。
 				sock.close();
 			}
@@ -49,3 +85,4 @@ public	class	ClockServer
 		}
 	}
 }
+>>>>>>> refs/remotes/origin/master
