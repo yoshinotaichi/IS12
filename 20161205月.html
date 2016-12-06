@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>geolocation</title>
+	<style>
+		html{
+			height: 100%;
+		}
+		body{
+			height: 100%;
+			margin:0;
+			padding:0;
+		}
+		#map_canvas{
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+	<script type="text/javascript"
+	src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script>
+		function disp(num){
+			navigator.geolocation.getCurrentPosition(function(position){
+				var lat=position.coords.latitude;
+				var lon=position.coords.longitude;
+				var latlng=new google.maps.LatLng(lat,lon);
+				var myoptions={
+					zoom:num,
+					center:latlng,
+					mapTypeId:google.maps.MapTypeId.ROADMAP
+				};
+				var map = new google.maps.Map(document.getElementById("map_canvas"),myoptions);
+				var marker1=new google.maps.Marker();
+				marker1.setPosition(new google.maps.LatLng(lat,lon));
+				marker1.setMap(map);
+			});
+		}
+		function zset(){
+			alert("zset");
+		}
+	</script>
+</head>
+<body onload="disp(15)">
+	<form action="" method="">
+	<select id="znum" onchange="zset()">
+	<script>
+	for(var i=0; i<=20; i++){
+		document.getElementById("znum").innerHTML +=
+		"<option value="+i+">"+i+"</option>";
+		}
+	</script>
+	</select>
+	</form>
+	<div id="map_canvas"></div>
+</body>
+</html>
