@@ -1,0 +1,232 @@
+20161208_memo
+=============
+
+meta:  
+20161208
+
+---
+
+# ALOHA
+- file: Aloha.java
+- "ALOHA!"と30回表示する
+	1. "for(){...}"をつかう
+
+		```java
+		public class Aloha {
+		  public static void main(String[] args) {
+		    // 30回くり返し
+		    for(int i = 0;  i < 30;  i++) {
+		      System.out.println("ALOHA!");
+		    }
+		  }
+		}
+		```
+
+	2. "while(){...}"をつかう
+
+		```java
+		public class Aloha {
+		  public static void main(String[] args) {
+		    // 30回くり返し
+		    int i = 0;
+		    while(i<30) {
+		      System.out.println("ALOHA!");
+		      i++;
+		    }
+		  }
+		}
+		```
+
+# ARGS
+- file: Args.java
+- コマンドライン引数を表示する
+
+	```cmd
+	java Args Aoki 52
+	Aokiさんは、52才です。
+
+	java Args Horie 55
+	Horieさんは、55才です。
+	```
+
+
+# ECHO
+- file: Echo.java
+- 入力した内容を読み取って、出力する
+	- "java.util.Scanner()"をつかう
+
+	```cmd
+	java Echo
+	入力してください >  Aoki
+	Aoki
+
+	java Echo
+	入力してください >  Horie
+	Horie
+	```
+
+
+- file: Echo.java
+- くり返し、入力した内容を読み取って出力する。
+	- "while(){...}"をつかう
+
+	```cmd
+	java Echo
+	入力してください > Aoki
+	Aoki
+
+	入力してください > Horie
+	Horie
+
+	入力してください > Miwa
+	Miwa
+
+	<Ctrl-C>
+	```
+
+
+- file: Echo.java
+- "Aoki" と入力すると、くり返し終了。
+	- if( data.equals("Aoki") ){ ... } をつかう
+		- ↑もし、dataが "Aoki"だったら ...
+	- break をつかう
+		- くり返しを終了する
+
+	```cmd
+	java Echo
+	入力してください > Miwa
+	Miwa
+
+	入力してください > Horie
+	Horie
+
+	入力してください > Aoki
+	Aoki
+
+	C:\Users\....\Documents\GitHub\160999\20161208>
+	```
+
+
+	```java
+	......
+
+	String data = new java.util.Scanner(System.in).nextLine();
+	System.out.println(data);
+
+	if(data.equals("Aoki")) {
+		break;
+	}
+
+	......
+	```
+
+
+- file: Echo.java
+- <Enter>だけ入力したら、プログラム終了する。
+
+	```cmd
+	java Echo
+	入力してください > Miwa
+	Miwa
+
+	入力してください > Horie
+	Horie
+
+	入力してください >
+
+	C:\Users\....\Documents\GitHub\160999\20161208>
+	```
+
+
+
+# Commit＠1回目
+
+- GitHub Desktopをつかう
+- "Aloha.java  Args.java  Echo.java added."
+
+- "Sync"する
+	- GitHub Desktop右上のほう、"Sync"をクリックする
+
+
+
+
+# 準備: 画像ファイルを１つ、フォルダに保存する
+- dir: ...documents > GitHub > 160999 > 20161208
+
+
+
+
+
+# Commit＠2回目
+- "img file added."
+
+
+
+
+# 画像ファイルのデータを出力する
+- 画像データを1バイトずつ、CMDに出力する。
+
+- file: ShowByteImage.java
+	- import
+		- "java.io.*"
+	- 変数
+		- FileInputStream inFile
+
+	- プログラム
+
+	```
+	// 1. 変数をつくる
+	// 2. try{...}catch(IOException e){...}
+		// 1. streamをつくる
+		// 2. データを読む
+		// 3. データを書く
+		// 4. streamを閉じる
+	```
+
+
+	```java
+	// 0. import
+	import java.io.*;
+
+	// 1. 変数をつくる
+	FileInputStream inFile = null;
+
+	// 2. try{...}catch(IOException e){...}
+	try {
+		// 1. streamをつくる( 画像ファイル名 )
+		inFile = new FileInputStream("JellyFish.jpg");
+
+		// 2. データを読む( 1回で、1byte )
+		int data = inFile.read();
+
+		// 3. データを書く( CMDの画面に書く )
+		System.out.println(data);
+
+		// 4. streamを閉じる
+		inFile.close();
+
+	} catch(IOException e) {
+		System.err.println("エラーです。");
+		System.exit(1);
+	}
+	```
+
+
+
+# 画像ファイルのデータを、ぜんぶ出力する
+- file: ShowByteImage.java
+- 1byteだけでなく、「ぜんぶ」データを出力する
+	- くり返し
+		- while((data = inFile.read())!= -1){ 出力する }
+
+
+
+end.
+
+
+
+
+
+
+
+
