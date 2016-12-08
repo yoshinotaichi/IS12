@@ -1,18 +1,18 @@
 import java.io.*;
-public class CopyByteImage{
+public class CopyByteText{
 	public static void main(String[]args){
 FileInputStream inFile = null;
 FileOutputStream outFile = null;
 
 try{
-	inFile = new FileInputStream("2.jpg");
-	outFile = new FileOutputStream("3.jpg");
+	inFile = new FileInputStream("TXXXT.txt");
+	outFile = new FileOutputStream("result.txt");
 	System.out.println("Streamを作りました。");
 	//int data = inFile.read();
 	int data;
 	while((data = inFile.read())!=-1){
-	outFile.write(data);
-	System.out.println("画像ファイルをコピーしています。");
+	outFile.write((char)data);
+	System.out.println("テキストファイルをコピーしています。");
 	}
 	inFile.close();
 	System.out.println("コピー終わりました。");
