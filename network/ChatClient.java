@@ -1,5 +1,5 @@
-// ŠÈˆÕ’ÊMƒvƒƒOƒ‰ƒ€BƒXƒgƒŠ[ƒ€‚Ì“Ç‚İ‘‚«‚ğŒJ‚è•Ô‚·B
-// ÀŒ±•û–@F java  client  ƒzƒXƒg–¼  ƒ|[ƒg”Ô†
+// Å ÃˆË†Ã•â€™ÃŠÂMÆ’vÆ’ÂÆ’OÆ’â€°Æ’â‚¬ÂBÆ’XÆ’gÆ’Å Â[Æ’â‚¬â€šÃŒâ€œÃ‡â€šÃÂâ€˜â€šÂ«â€šÃ°Å’Jâ€šÃ¨â€¢Ã”â€šÂ·ÂB
+// Å½Ã€Å’Â±â€¢Ã»â€“@ÂF java  client  Æ’zÆ’XÆ’gâ€“Â¼  Æ’|Â[Æ’gâ€Ã”Ââ€ 
 // T1.java
 
 import	java.net.*;
@@ -7,7 +7,7 @@ import	java.io.*;
 
 public	class	 ChatClient
 {
-	// main()ƒƒ\ƒbƒh
+	// main()Æ’ÂÆ’\Æ’bÆ’h
 	public	static	void	main(String[]	args)
 	{
 		try	{
@@ -19,8 +19,8 @@ public	class	 ChatClient
 			e.printStackTrace();
 			System.exit(1);
 		}
-	} // main()ƒƒ\ƒbƒh‚ÌI‚í‚èB
-} // ChatClientƒNƒ‰ƒX‚ÌI‚í‚èB
+	} // main()Æ’ÂÆ’\Æ’bÆ’hâ€šÃŒÂIâ€šÃ­â€šÃ¨ÂB
+} // ChatClientÆ’NÆ’â€°Æ’Xâ€šÃŒÂIâ€šÃ­â€šÃ¨ÂB
 
 
 
@@ -31,16 +31,16 @@ class	T1
 	public	BufferedInputStream	inBIS;
 
 
-	// openConnection()ƒƒ\ƒbƒh
+	// openConnection()Æ’ÂÆ’\Æ’bÆ’h
 	public	void	openConnection(String	host,  int	port)	throws IOException, UnknownHostException
 	{
 		sock	=	new	Socket(host, port);
 		outST = sock.getOutputStream();
 		inBIS = new BufferedInputStream(sock.getInputStream());
-	} // openConnection()ƒƒ\ƒbƒh‚ÌI‚í‚èB
+	} // openConnection()Æ’ÂÆ’\Æ’bÆ’hâ€šÃŒÂIâ€šÃ­â€šÃ¨ÂB
 
 
-	// main_proc()ƒƒ\ƒbƒh
+	// main_proc()Æ’ÂÆ’\Æ’bÆ’h
 	public	void	main_proc()	throws	IOException
 	{
 		try	{
@@ -50,14 +50,14 @@ class	T1
 			Thread	input_thread = new Thread(stdin_to_socket);
 			Thread	output_thread = new Thread(socket_to_stdout);
 
-			input_thread.start();
-			output_thread.start();
+			inthread.start();
+			outthread.start();
 		}	catch(Exception	e)	{
 			System.err.print(e);
 			System.exit(1);
 		}
-	} // main_proc()ƒƒ\ƒbƒh‚ÌI‚í‚èB
-} // T1ƒNƒ‰ƒX‚ÌI‚í‚èB
+	} // main_proc()Æ’ÂÆ’\Æ’bÆ’hâ€šÃŒÂIâ€šÃ­â€šÃ¨ÂB
+} // T1Æ’NÆ’â€°Æ’Xâ€šÃŒÂIâ€šÃ­â€šÃ¨ÂB
 
 
 
@@ -71,13 +71,13 @@ class	T1
 
 
 
-// StreamConnectorƒNƒ‰ƒX
+// StreamConnectorÆ’NÆ’â€°Æ’X
 class	StreamConnector	implements	Runnable
 {
 	InputStream	src	=	null;
 	OutputStream	dist	=	null;
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// Æ’RÆ’â€œÆ’XÆ’gÆ’â€°Æ’NÆ’^
 	public	StreamConnector(InputStream	in,		OutputStream	out)
 	{
 		src	=	in;
@@ -85,7 +85,7 @@ class	StreamConnector	implements	Runnable
 	}
 
 
-	// ƒXƒŒƒbƒhˆ—‚Ì–{‘Ì
+	// Æ’XÆ’Å’Æ’bÆ’hÂË†â€”Ââ€šÃŒâ€“{â€˜ÃŒ
 	public	void	run()
 	{
 		byte[]	buff	=	new	byte[1024];
@@ -105,4 +105,4 @@ class	StreamConnector	implements	Runnable
 			}
 		}
 	}
-} // StreamConnectorƒNƒ‰ƒX‚ÌI‚í‚èB
+} // StreamConnectorÆ’NÆ’â€°Æ’Xâ€šÃŒÂIâ€šÃ­â€šÃ¨ÂB
